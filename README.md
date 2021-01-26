@@ -1,4 +1,4 @@
-# Better Tensor Ops
+# (WIP!) Better Tensor Ops
 
 Proof of concept of a more intuitive way of doing tensor operations in python.
 
@@ -25,3 +25,5 @@ E = (A['abcd']*B['ad'])['da']
 F = (A['abcd']==C['aj'])['ja']
 
 ```
+Tensors can also be multiplied and added without providing names as long as they are of numpy compatible broadcastable shapes. 
+However, Tensors will not behave as the underlying array when used in e.g. numpy functions.
