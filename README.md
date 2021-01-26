@@ -8,5 +8,20 @@ The Tensor class acts as wrapper around the array, delegating operations to the 
 This means that certain operations may be inefficient, since they might rely on broadcasting etc.
 Especially regular indexing is extremely inefficient as it relies on evaluating strings as a hack to enable the same syntax to be used.
 
-
 Inspired by https://github.com/Jutho/TensorOperations.jl
+
+## Examples
+
+```python
+import numpy as np
+from tensor_ops import Tensor
+
+A = Tensor(np.random.randn(5,10,6,7))
+B = Tensor(np.random.randn(5,7))
+C = Tensor(np.random.randn(5,8))
+
+D = (A['abcd']+B['ad'])['abcd']
+E = (A['abcd']*B['ad'])['da']
+F = (A['abcd']==C['aj'])['ja']
+
+```
